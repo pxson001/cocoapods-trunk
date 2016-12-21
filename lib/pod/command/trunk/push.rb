@@ -112,7 +112,7 @@ module Pod
         def validate_podspec
           UI.puts 'Validating podspec'.yellow
 
-          validator = Validator.new(spec, %w(https://github.com/CocoaPods/Specs.git,http://192.168.99.100:10080/root/Specs.git))
+          validator = Validator.new(spec, %w(https://github.com/CocoaPods/Specs.git http://192.168.99.100:10080/root/Specs.git))
           validator.allow_warnings = @allow_warnings
           validator.use_frameworks = @use_frameworks
           validator.swift_version  = @swift_version if Validator.method_defined?(:swift_version=)
