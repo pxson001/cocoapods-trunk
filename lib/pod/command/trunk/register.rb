@@ -69,7 +69,7 @@ module Pod
         end
 
         def save_token(token)
-          netrc['trunk.cocoapods.org'] = @email, token
+          netrc['192.168.99.100:4567'] = @email, token
           netrc.save
         end
       end

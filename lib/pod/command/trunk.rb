@@ -10,7 +10,7 @@ module Pod
       self.abstract_command = true
       self.summary = 'Interact with the CocoaPods API (e.g. publishing new specs)'
 
-      SCHEME_AND_HOST = ENV['TRUNK_SCHEME_AND_HOST'] || 'https://trunk.cocoapods.org'
+      SCHEME_AND_HOST = ENV['TRUNK_SCHEME_AND_HOST'] || 'http://192.168.99.100:4567'
       BASE_URL = "#{SCHEME_AND_HOST}/api/v1".freeze
 
       require 'pod/command/trunk/add_owner'
@@ -108,7 +108,7 @@ module Pod
 
       def token
         ENV['COCOAPODS_TRUNK_TOKEN'] ||
-          (netrc['trunk.cocoapods.org'] && netrc['trunk.cocoapods.org'].password)
+          (netrc['192.168.99.100:4567'] && netrc['192.168.99.100:4567'].password)
       end
 
       def default_headers
